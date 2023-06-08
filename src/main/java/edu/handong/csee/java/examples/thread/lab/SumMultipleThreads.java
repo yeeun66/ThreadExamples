@@ -29,6 +29,7 @@ public class SumMultipleThreads {
 			thread.start();
 			threadsForSubSum.add(thread);
 			System.out.println("Thread-" + i + " started!");
+			
 		}
 
 		long grandTotal = 0;
