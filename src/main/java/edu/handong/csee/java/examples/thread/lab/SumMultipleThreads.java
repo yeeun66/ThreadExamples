@@ -33,6 +33,13 @@ public class SumMultipleThreads {
 		}
 
 		long grandTotal = 0;
+		for (Thread subThread : threadsForSubSum) {
+            try {
+                subThread.join(); // 모든 스레드의 종료를 기다림
+            } catch (InterruptedException e) {
+                // 예외 처리
+            }
+        }
 		for(SumRunner runner:sumRunners) {
 			grandTotal += runner.totalSum;
 		}
